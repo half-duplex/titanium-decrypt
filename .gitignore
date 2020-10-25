@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+Pipfile
+Pipfile.lock
+.env
+.venv
+env/
+venv/
+*.tar
+*.gz
+*.bz2
+*.xml
