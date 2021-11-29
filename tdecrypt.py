@@ -73,13 +73,13 @@ def titanium_decrypt(enc_file: BinaryIO, out_file: BinaryIO, passphrase: bytes):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        logging.error("Usage: {} encrypted-file.tar")
+        logging.error("Usage: %s encrypted-file.tar", sys.argv[0])
         exit(1)
     input_file = sys.argv[1]
     if not os.path.isfile(input_file):
-        logging.error("Usage: {} encrypted-file.tar")
+        logging.error("Usage: %s encrypted-file.tar", sys.argv[0])
         exit(1)
-    output_file = "decrypted_" + input_file
+    output_file = "decrypted_" + os.path.basename(input_file)
     if "passphrase" in os.environ:
         passphrase = os.environ["passphrase"].encode("utf-8")
     else:
